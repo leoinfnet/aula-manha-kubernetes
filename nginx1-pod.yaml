@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: nginx1
+ labels:
+  app: nginx
+  author: leonardo
+  env: homolog
+spec:
+ containers: 
+ - name: nginx
+   image: nginx:1.24.0
+   ports:
+   - containerPort: 80
