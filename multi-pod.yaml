@@ -6,6 +6,8 @@ spec:
  volumes:
  - name: logs-volume
    emptyDir: {}
+ - name: outro-volume
+   emptyDir: {}
  containers:
  - image: nginx
    name: nginxmulti
@@ -16,6 +18,8 @@ spec:
    volumeMounts:
    - name: logs-volume
      mountPath: /tmp/b
+   - name: outroVolume
+    mountPath: /tmp/logs
    name: busymulti
    command: 
    - sh

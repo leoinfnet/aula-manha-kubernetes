@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx-logs
+  name: nginx-logs
+spec:
+  volumes:
+  - name: logs
+    persistentVolumeClaim:
+     claimName: logs-pvc
+  containers:
+  - image: nginx
+    name: nginx-logs
+    volumeMounts:
+    - name: logs
+      mountPath: "/tmp"
+
+
